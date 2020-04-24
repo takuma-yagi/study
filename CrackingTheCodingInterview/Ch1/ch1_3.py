@@ -4,6 +4,8 @@ def URLify(char):
     lst = list(char.split())
     return '%20'.join(lst)
 
+def replaceSpace(char):
+    
 
 class Test(unittest.TestCase):
 
