@@ -33,3 +33,18 @@ class Test(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
+
+
+#javaと同じ書き方！
+def Isperm(phrase):
+    table = [ord(i) for i in phrase]
+    return foundodd(table)
+
+def foundodd(table):
+    odd = False
+    for i in table:
+        if i % 2 == 0:
+            if odd:
+                return False
+            odd = True
+        return True
