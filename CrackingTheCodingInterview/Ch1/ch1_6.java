@@ -10,7 +10,7 @@ Class ch1_6{
     int count = 0;
     for (int i = 0; i < str.length(); i++){
       count ++;
-      if (str.charAt(i) == str.charAt(i + 1) && i + 1 <= str.length()){
+      if (str.charAt(i) != str.charAt(i + 1) || i + 1 <= str.length()){
         compressed = "" + str.charAt(i) + count;
         count = 0;
       }
@@ -21,7 +21,6 @@ Class ch1_6{
   /*
   これだと実行時間が長い。文字列走査＋文字列生成でO(p+k^2)
   ⇨StringBuilderによる解法(Javaだと文字列の操作が直接できない)
-  Pythonはリストにしてjoin?
   */
 
 
