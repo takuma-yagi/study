@@ -1,11 +1,17 @@
-Class Main{
+class Main{
   public static void main(String[] args){
-    String str = 'akasaka';
-    isUnique_set(str);
-    isUnique_bit(str);
+    String str1 = "akasaka";
+    String str2 = "minato";
+    output(str1);
+    output(str2);
+  }
+  public static void output(String str){
+    System.out.println(str);
+    System.out.println(isUnique_set(str));
+    System.out.println(isUnique_bit(str));
   }
   //
-  boolean isUnique_set(String char){
+  public static boolean isUnique_set(String str){
     if (str.length() > 128) return false;
     boolean[] char_set = new boolean[128];
     for (int i = 0; i < str.length(); i++){
@@ -19,14 +25,15 @@ Class Main{
   }
 
   /*using bit*/
-  boolean isUnique_bit(String str){
-    int chacker = 0;
+  public static boolean isUnique_bit(String str){
+    int checker = 0;
     for (int i = 0; i < str.length(); i++){
-      int val = srt.charAt(i) - 'a';
+      int val = str.charAt(i) - 'a';
       if ((checker & (1 << val)) > 0){
         return false;
       }
       checker |= (1 << val);
     }
     return true;
+  }
 }
