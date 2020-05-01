@@ -28,15 +28,18 @@ class Main{
       for (int j = i;j < n; j++){
         if (lst[j] < lst[minj]){
           minj = j;
+
         }
       }
-      int tmp = lst[i];
-      lst[i] = lst[minj];
-      lst[minj] = tmp;
-      count ++;
-      output(lst, n);
-    }
+      if (minj != i){
+        int tmp = lst[i];
+        lst[i] = lst[minj];
+        lst[minj] = tmp;
+        count ++;
+      }
 
+    }
+    output(lst, n);
     System.out.println(count);
   }
 }
