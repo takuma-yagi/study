@@ -1,4 +1,3 @@
-
 def howManyPresent(N):
     seen = []
     for i in range(N):

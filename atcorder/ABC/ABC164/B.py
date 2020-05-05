@@ -23,3 +23,23 @@ takahashi = monster(a, b)
 aoki = monster(c,d)
 
 print(battle(takahashi, aoki))
+
+
+""
+以下解き直し
+takahashiの体力が0になるのはa/d回目の攻撃を受けるとき
+aokiの体力が0になるのはb/c回目の攻撃を受けるとき
+""
+
+t_hp, t_ap, a_hp, a_ap = map(int,input().split())
+
+while t_hp > 0 or a_hp > 0:
+    a_hp -= t_ap
+    if a_hp <= 0:
+        print('Yes')
+        break
+
+    t_hp -= a_ap
+    if t_hp <= 0:
+        print('No')
+        break
