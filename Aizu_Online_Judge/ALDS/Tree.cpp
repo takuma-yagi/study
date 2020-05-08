@@ -13,4 +13,6 @@ void print(int u){
   cout << "node" << u << ":";
   cout << "parent = " << T[u].p << ",";
   cout << "depth = " << D[u] << ",";
+
+  if (T[u].p
 }

@@ -28,7 +28,6 @@ class Main{
       for (int j = i;j < n; j++){
         if (lst[j] < lst[minj]){
           minj = j;
-
         }
       }
       if (minj != i){

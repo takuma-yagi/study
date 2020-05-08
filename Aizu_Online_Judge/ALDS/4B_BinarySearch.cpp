@@ -36,35 +36,22 @@ int main(){
   return 0;
 }
 
+//簡単な書き方
+//algorithmをインクルードする
 
 #include <bits/stdc++.h>
-#include <stdio.h>
+#include <algorithm>
 using namespace std;
 
-int n;
-int a[100000 + 1];
-
-int binarysearch(key){
-  int left = 0;
-  int right = n;
-  int mid;
-  while(left < right){
-    if (a[key] == mid) return 1;
-    if (a[key] > mid) right = mid;
-    else if(a[key] < mid) left = mid + 1;
-  }
-  return 0;
-}
-
 int main(){
-  int n, q, i, sum = 0;
-  scanf("&d", &n);
-  for (i = 0; i < n; i++) scanf("%d", &a[i]);
-  scanf("&d", &q);
-  for (i = 0; i < q; i++){
-    scanf("&d", &key);
-    if(binarysearch(key)) sum++;
-  }
-  printf("%d", sum);
-  return 0;
+ vector<int> a = {1,2,3,4,6,7,9,13,17};
+ sort(a.begin(), a.end());
+ for (int i = 0; i < 20; i++){
+   if (binary_search(a.begin(), a.end(), i)){
+     cout << i << ": " << "found" << endl;
+   }else{
+     cout << i << ": " << "not found" << endl;
+   }
+ }
+ return 0;
 }
