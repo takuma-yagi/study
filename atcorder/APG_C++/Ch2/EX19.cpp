@@ -44,3 +44,33 @@ int main() {
   cout << correct_count << endl;
   cout << wrong_count << endl;
 }
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void saiten(vector<vector<int> > &a, int &correct_count, int &wrong_count){
+  int i, j;
+  for(i = 0; i < 9; i++){
+    for(j = 0; j < 9; j++){
+      if(a.at(i).at(j) != (i + 1) * (j + 1)){
+        a.at(i).at(j) != (i + 1) * (j + 1);
+        wrong_count ++;
+      }else correct_count++;
+    }
+  }
+}
+
+int main(){
+  int correct = 0, wrong = 0, i, j;
+  vector<vector<int>> a(9, vector<int>(9));
+  for (i = 0; i < 9; i++){
+    for (j = 0;j < 9; j++){
+      cin >> a.at(i).at(j);
+    }
+  }
+
+  saiten(a, correct, wrong);
+
+  cout << correct << endl;
+  cout << wrong <<endl;
+}
