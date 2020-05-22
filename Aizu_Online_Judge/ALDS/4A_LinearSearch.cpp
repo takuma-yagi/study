@@ -2,54 +2,19 @@
 using namespace std;
 
 int main(){
-  int n, m;
-  cin >> n;
-  vector<int> s(n);
-  for (int i = 0; i < n ; i++){
-    cin >> s.at(i);
-  }
-  cin >> m;
-  int v, count = 0;
-  for (int i = 0; i < m; i++){
-    cin >> v;
-    for (int j = 0; j < n; j++){
-      if (v == s.at(j)){
-        count ++;
-      }
-    }
-  }
-  cout << count << endl;
-}
-
-
-/*
-違う！*/
-
-
-#include <bits/stdc++.h>
-#include <stdio.h>
-using namespace std;
-
-int search(int A[], int n, int key){
-  int i = 0;
-  A[n] = key;
-  while (A[i] != key){
-    return i != n;
-  }
-}
-
-int main(){
-  int i, n, A[10000 + 1], q, key, sum = 0;
+  int n, val, m, i, j, count = 0, v;
   scanf("%d", &n);
-  for (i = 0; i < n; i++){
-    scanf("&d", &A[i]);
+  set<int> s;
+  for(i = 0; i < n; i++) {
+    scanf("%d", &val);
+    s.insert(val);
   }
-  scanf("%d", &q);
-  for (i = 0; i < q; i++){
-    scanf("%d", key);
-    if (search(A, n, key)) sum++;
-  }
-  printf("&d", sum);
+  scanf("%d", &m);
 
-  return 0;
+  for(i = 0; i < m; i++){
+    scanf("%d", &v);
+    if (s.count(v)) count++;
+  }
+
+  printf("%d\n", count);
 }

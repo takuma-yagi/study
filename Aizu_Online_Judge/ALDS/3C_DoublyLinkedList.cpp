@@ -1,57 +1,36 @@
 #include <bits/stdc++.h>
-#include <list>
 using namespace std;
 
 int main(){
-  int n;
-  cin >> n;
-  list<int> v;
-  char com[20];
-  int val;
-
-  for (int i = 0; i < n; i++){
-    scanf("%S", &com);
-    // 以下入力コマンドごとの動作
-    if (c == 'insert'){
-      scanf("%d", val);
-      v.push_front(val);
-    }else if(c == 'delete'){
-      scanf("%d", val);
-      for (list<int>::iterator it = v.begin(); it != v.end(); it++){
-        if (*it == val){
-          v.erace(it);
+  int n, i;
+  scanf("%d", &n);
+  list<int> a;
+  list<int>::iterator it, l;
+  for(i = 0; i < n; i++){
+    int value;
+    string query;
+    cin >> query;
+    if(query == "insert"){
+      scanf("%d", &value);
+      a.push_front(value);
+    }else if(query == "delete"){
+      scanf("%d", &value);
+      for(it = a.begin();it != a.end();){
+        if(*it == value){
+          a.erase(it);
           break;
         }
+        else it++;
       }
-    }
-    }else if(c == 'deleteFirst'){
-      v.pop_front();
+    }else if(query == "deleteFirst"){
+      a.pop_front();
     }else{
-      v.pop_back();
+      a.pop_back();
     }
   }
-}
-
-int main(){
-  int n;
-  cin >> n;
-  list<int> v;
-  char com[20];
-  int val;
-
-  for (int i = 0; i < n; i++){
-    scanf("%S", &com);
-    if(c == 'insert'){
-      scanf("%d", val);
-      v.push_front(val);
-    }else if (c == 'delete'){
-      scanf("%d", val);
-      for (list<int>:: iterator it = v.begin(); it != v.end(); it++){
-        if(*it == val){
-          v.erase(it);
-          break;
-        }
-      }
-    }
+  it = a.begin();
+  for(it,l = --a.end(); it!=l;++it){
+    cout << *it << " ";
   }
+  cout << *a.end() << endl;
 }
